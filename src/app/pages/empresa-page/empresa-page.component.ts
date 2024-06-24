@@ -1,8 +1,8 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EmpresaModel } from 'src/app/models/empresa';
-import { EmpresaService } from 'src/app/services/empresa.service';
-import { EmpresaDialogComponent } from '../empresa-dialog/empresa-dialog.component';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {EmpresaModel} from 'src/app/models/empresa';
+import {EmpresaService} from 'src/app/services/empresa.service';
+import {EmpresaDialogComponent} from '../empresa-dialog/empresa-dialog.component';
 
 @Component({
   selector: 'page-empresa',
@@ -14,12 +14,12 @@ export class EmpresaPageComponent implements OnInit, AfterViewInit {
   public empresas: Array<EmpresaModel> = [];
 
   constructor(private empresaService: EmpresaService,
-    private changeDetectorService: ChangeDetectorRef,
-    private modalService: NgbModal) {
+              private changeDetectorService: ChangeDetectorRef,
+              private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
-    /* this.loadEmpresas(); */
+    this.loadEmpresas();
   }
 
   ngAfterViewInit(): void {
@@ -49,10 +49,20 @@ export class EmpresaPageComponent implements OnInit, AfterViewInit {
   }
 
   mergeEmpresa(action: EmpresaModel) {
-
+    this.empresaService.merge(action).subscribe({
+      next: (response: EmpresaModel) => {
+        this.loadEmpresas();
+      },
+      error: err => console.error(err)
+    })
   }
 
-  saveEmpresa(action: EmpresaModel) {
-
+  saveEmpresa(empresaModel: EmpresaModel) {
+    this.empresaService.save(empresaModel).subscribe({
+      next: (response: EmpresaModel) => {
+        this.loadEmpresas();
+      },
+      error: err => console.error(err)
+    })
   }
 }

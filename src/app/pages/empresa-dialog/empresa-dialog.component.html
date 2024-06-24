@@ -3,7 +3,7 @@
   <button type="button" class="btn-close" aria-label="Close button" aria-describedby="modal-title" (click)="onDimiss()"></button>
 </div>
 <div class="modal-body">
-  <form (submit)="onSubmitEmpresa()">
+  <form>
     <div class="row d-flex">
       <div class="col-12">
         <div class="mb-3">
@@ -22,5 +22,5 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-secondary" (click)="onDimiss()">Cancelar</button>
-  <button type="submit" ngbAutofocus class="btn btn-success">Guardar</button>
+  <button type="button" class="btn btn-success" (click)="onSubmitEmpresa()">Guardar</button>
 </div>
