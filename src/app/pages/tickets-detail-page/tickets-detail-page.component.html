@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center bg-dark my-3 py-2 text-center" style="border-radius: 1rem;">
+    <h4 class="text-light">Detalle del ticket</h4>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <!-- TABLE -->
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Asunto</th>
+          <th>Descripcion</th>
+          <th>Estado</th>
+          <th>Responsable</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of ticket.detalleTicket">
+          <td>{{ detalle.id }}</td>
+          <td>{{ detalle.asunto }}</td>
+          <td>{{ detalle.descripcion }}</td>
+          <td>{{ detalle.estado }}</td>
+          <td>{{ detalle.responsable.tipo }}</td>
+          <td>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary btn-sm">Ver</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- ./TABLE -->
+  </div>
+</div>
