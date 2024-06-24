@@ -13,8 +13,8 @@ export class TicketService {
   constructor(private http: HttpClient) { }
 
   public list = (): Observable<Array<TicketModel>> =>
-    this.http.get<Array<TicketModel>>(API_URL + '/all');
+    this.http.get<Array<TicketModel>>(this.URL + '/all');
 
   public findById = (ticketId: number): Observable<TicketModel> =>
-    this.http.get<TicketModel>(API_URL + '/' + ticketId);
+    this.http.get<TicketModel>(this.URL + '/' + ticketId);
 }

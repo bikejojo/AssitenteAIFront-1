@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
 import { TicketsDetailPageComponent } from './pages/tickets-detail-page/tickets-detail-page.component';
+import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -11,7 +12,8 @@ const routes: Routes = [
       { path: '', component: TicketsPageComponent },
       { path: ':ticket_id', component: TicketsDetailPageComponent }
     ]
-  }
+  },
+  { path: 'empresas', component: EmpresaPageComponent }
   /* {
     path: 'internal',
     canActivate: [],

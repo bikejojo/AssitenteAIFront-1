@@ -14,4 +14,8 @@ export class MenuComponent {
   protected onRedirectTicketPage = (): void => {
     this.router.navigate(['/tickets']);
   }
+
+  onRedirectEmpresaPage() {
+    this.router.navigate(['/empresas']);
+  }
 }

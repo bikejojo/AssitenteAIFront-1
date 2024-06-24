@@ -8,27 +8,23 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Solicitante</th>
-          <th>Responsable</th>
-          <th>Soporte</th>
-          <th>Estado</th>
-          <th>Asunto</th>
-          <th>Descripcion</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>Empresa</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ticket of tickets">
-          <td>{{ ticket.id }}</td>
-          <td>{{ ticket.solicitante }}</td>
-          <td>{{ ticket.responsable }}</td>
-          <td>{{ ticket.soporte.fechaInicio }}</td>
-          <td>{{ ticket.estado }}</td>
-          <td>{{ ticket.asunto }}</td>
-          <td>{{ ticket.descripcion }}</td>
+        <tr *ngFor="let empleado of empleados">
+          <td>{{ empleado.id }}</td>
+          <td>{{ empleado.nombre }}</td>
+          <td>{{ empleado.correo }}</td>
+          <td>{{ empleado.telefono }}</td>
+          <td>{{ empleado.empresa.razonSocial }}</td>
           <td>
             <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary btn-sm">Detalle</button>
+              <button type="button" class="btn btn-primary btn-sm">Editar</button>
             </div>
           </td>
         </tr>
