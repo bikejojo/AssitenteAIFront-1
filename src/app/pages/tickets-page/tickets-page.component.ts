@@ -1,6 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { TicketModel } from 'src/app/models/ticket';
-import { TicketService } from 'src/app/services/ticket.service';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {TicketModel} from 'src/app/models/ticket';
+import {TicketService} from 'src/app/services/ticket.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'page-tickets',
@@ -12,7 +13,8 @@ export class TicketsPageComponent implements OnInit, AfterViewInit {
   public tickets: TicketModel[] = [];
 
   constructor(private ticketService: TicketService,
-    private changeDetectorService: ChangeDetectorRef) {
+              private changeDetectorService: ChangeDetectorRef,
+              private router: Router) {
   }
 
   ngAfterViewInit(): void {
@@ -31,4 +33,7 @@ export class TicketsPageComponent implements OnInit, AfterViewInit {
     })
   }
 
+  onClickRedirectTicketDetail(ticket: TicketModel) {
+    this.router.navigate(['/tickets', ticket.id]);
+  }
 }

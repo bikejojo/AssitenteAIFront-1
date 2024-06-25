@@ -20,15 +20,15 @@
       <tbody>
         <tr *ngFor="let ticket of tickets">
           <td>{{ ticket.id }}</td>
-          <td>{{ ticket.solicitante }}</td>
-          <td>{{ ticket.responsable }}</td>
+          <td>{{ ticket.solicitante.nombre }}</td>
+          <td>{{ ticket.responsable.nombre }} ({{ ticket.responsable.tipo }})</td>
           <td>{{ ticket.soporte.fechaInicio }}</td>
           <td>{{ ticket.estado }}</td>
           <td>{{ ticket.asunto }}</td>
           <td>{{ ticket.descripcion }}</td>
           <td>
             <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary btn-sm">Detalle</button>
+              <button type="button" class="btn btn-primary btn-sm" (click)="onClickRedirectTicketDetail(ticket)">Detalle</button>
             </div>
           </td>
         </tr>
