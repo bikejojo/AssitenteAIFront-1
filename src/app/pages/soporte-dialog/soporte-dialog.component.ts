@@ -24,6 +24,8 @@ export class SoporteDialogComponent implements OnInit, AfterViewInit {
               private changeDdetector: ChangeDetectorRef) {
     this.soporte = new SoporteModel();
     this.saveEmmiter = new EventEmitter();
+    this.loadEmpresas();
+    this.loadProductos();
   }
 
   ngAfterViewInit(): void {
@@ -31,8 +33,6 @@ export class SoporteDialogComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.loadEmpresas();
-    this.loadProductos();
   }
 
   onDimiss() {
@@ -54,6 +54,7 @@ export class SoporteDialogComponent implements OnInit, AfterViewInit {
   private loadEmpresas() {
     this.empresaService.list().subscribe({
       next: (response: EmpresaModel[]) => {
+        debugger;
         this.empresas = response;
       }
     })
