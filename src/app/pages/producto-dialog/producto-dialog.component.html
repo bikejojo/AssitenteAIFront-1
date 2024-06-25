@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Producto</h4>
+  <button type="button" class="btn-close" aria-label="Close button" aria-describedby="modal-title" (click)="onDimiss()"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="row d-flex">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="nit" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nit" placeholder="Ej. Sistema de ventas" [(ngModel)]="producto.nombre" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <!--      <div class="col-12">-->
+      <!--        <div class="mb-3">-->
+      <!--          <label for="razon-social" class="form-label">Razón Social</label>-->
+      <!--          <input type="text" class="form-control" id="razon-social" placeholder="Ej. Empresa Importador ABC SRL" [(ngModel)]="empresa.razonSocial">-->
+      <!--        </div>-->
+      <!--      </div>-->
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="onDimiss()">Cancelar</button>
+  <button type="button" class="btn btn-success" (click)="onSubmitProducto()">Guardar</button>
+</div>

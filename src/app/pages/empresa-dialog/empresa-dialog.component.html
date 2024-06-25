@@ -8,13 +8,13 @@
       <div class="col-12">
         <div class="mb-3">
           <label for="nit" class="form-label">NIT</label>
-          <input type="text" class="form-control" id="nit" placeholder="Ej. 12345678" [(ngModel)]="empresa.nit">
+          <input type="text" class="form-control" id="nit" placeholder="Ej. 12345678" [(ngModel)]="empresa.nit" [ngModelOptions]="{standalone: true}">
         </div>
       </div>
       <div class="col-12">
         <div class="mb-3">
           <label for="razon-social" class="form-label">Razón Social</label>
-          <input type="text" class="form-control" id="razon-social" placeholder="Ej. Empresa Importador ABC SRL" [(ngModel)]="empresa.razonSocial">
+          <input type="text" class="form-control" id="razon-social" placeholder="Ej. Empresa Importador ABC SRL" [(ngModel)]="empresa.razonSocial" [ngModelOptions]="{standalone: true}">
         </div>
       </div>
     </div>

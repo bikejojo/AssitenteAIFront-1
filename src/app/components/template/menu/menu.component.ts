@@ -18,4 +18,16 @@ export class MenuComponent {
   onRedirectEmpresaPage() {
     this.router.navigate(['/empresas']);
   }
+
+  onRedirectAgentePage() {
+    this.router.navigate(['/agente']);
+  }
+
+  onRedirectProductoPage() {
+    this.router.navigate(['/producto']);
+  }
+
+  onRedirectSoportePage() {
+    this.router.navigate(['/soporte']);
+  }
 }

@@ -39,7 +39,7 @@ export class EmpresaPageComponent implements OnInit, AfterViewInit {
     const modalRef = this.modalService.open(EmpresaDialogComponent, {
       centered: true
     });
-    modalRef.componentInstance.empresa = new EmpresaModel(100, 'Club Bolivar', '548946464');
+    modalRef.componentInstance.empresa = new EmpresaModel();
     modalRef.componentInstance.saveEmmiter.subscribe((action: EmpresaModel) => {
       if (action.id)
         this.saveEmpresa(action);
@@ -63,6 +63,16 @@ export class EmpresaPageComponent implements OnInit, AfterViewInit {
         this.loadEmpresas();
       },
       error: err => console.error(err)
+    })
+  }
+
+  onClickShowDialogEmpresaUpdate(empresa: EmpresaModel) {
+    const modalRef = this.modalService.open(EmpresaDialogComponent, {
+      centered: true
+    });
+    modalRef.componentInstance.empresa = empresa;
+    modalRef.componentInstance.saveEmmiter.subscribe((action: EmpresaModel) => {
+        this.mergeEmpresa(action);
     })
   }
 }

@@ -13,6 +13,12 @@ import { EmpleadosPageComponent } from './pages/empleados-page/empleados-page.co
 import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmpresaDialogComponent } from './pages/empresa-dialog/empresa-dialog.component';
+import { AgentePageComponent } from './pages/agente-page/agente-page.component';
+import { AgenteDialogComponent } from './pages/agente-dialog/agente-dialog.component';
+import { ProductoPageComponent } from './pages/producto-page/producto-page.component';
+import { ProductoDialogComponent } from './pages/producto-dialog/producto-dialog.component';
+import { SoportePageComponent } from './pages/soporte-page/soporte-page.component';
+import { SoporteDialogComponent } from './pages/soporte-dialog/soporte-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { EmpresaDialogComponent } from './pages/empresa-dialog/empresa-dialog.co
     TicketsDetailPageComponent,
     EmpleadosPageComponent,
     EmpresaPageComponent,
-    EmpresaDialogComponent
+    EmpresaDialogComponent,
+    AgentePageComponent,
+    AgenteDialogComponent,
+    ProductoPageComponent,
+    ProductoDialogComponent,
+    SoportePageComponent,
+    SoporteDialogComponent
   ],
   imports: [
     BrowserModule,

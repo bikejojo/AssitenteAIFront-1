@@ -26,7 +26,6 @@ export class EmpresaDialogComponent {
   }
 
   onSubmitEmpresa() {
-    debugger;
     this.saveEmmiter.emit(this.empresa);
     this.onClose();
   }

@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Agente</h4>
+  <button type="button" class="btn-close" aria-label="Close button" aria-describedby="modal-title"
+          (click)="onDimiss()"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="row d-flex">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="nit" class="form-label">Tipo</label>
+          <input type="text" class="form-control" id="nit" placeholder="Ej. 12345678" [(ngModel)]="agente.tipo"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="nomb" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nomb" placeholder="Ej. Raul" [(ngModel)]="agente.nombre"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ej. raul@test.com" [(ngModel)]="agente.email"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="onDimiss()">Cancelar</button>
+  <button type="button" class="btn btn-success" (click)="onSubmitEmpresa()">Guardar</button>
+</div>

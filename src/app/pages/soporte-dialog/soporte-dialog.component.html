@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Soporte</h4>
+  <button type="button" class="btn-close" aria-label="Close button" aria-describedby="modal-title"
+          (click)="onDimiss()"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="row d-flex">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="fini" class="form-label">Fecha Inicio</label>
+          <input type="date" class="form-control" id="fini" placeholder="Ej. 12345678" [(ngModel)]="soporte.fechaInicio"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="ffin" class="form-label">Fecha Fin</label>
+          <input type="date" class="form-control" id="ffin" placeholder="Ej. 12345678" [(ngModel)]="soporte.fechaFin"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="esta" class="form-label">Estado</label>
+          <input type="text" class="form-control" id="esta" placeholder="Ej. 12345678" [(ngModel)]="soporte.estado"
+                 [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="empr" class="form-label">Empresa</label>
+          <select id="empr" class="form-select form-select-sm" aria-label="Small select example"
+                  [(ngModel)]="soporte.empresa"
+                  [ngModelOptions]="{standalone: true}">
+            <ng-container *ngFor="let empresa of empresas">
+              <option value="{{empresa.id}}">{{ empresa.razonSocial }}
+              </option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="prod" class="form-label">Producto</label>
+          <select id="prod" class="form-select form-select-sm" aria-label="Small select example"
+                  [(ngModel)]="soporte.producto"
+                  [ngModelOptions]="{standalone: true}">
+            <ng-container *ngFor="let producto of productos">
+              <option value="{{producto.id}}">{{ producto.nombre }}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="onDimiss()">Cancelar</button>
+  <button type="button" class="btn btn-success" (click)="onSubmitSoporte()">Guardar</button>
+</div>

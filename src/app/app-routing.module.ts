@@ -1,19 +1,25 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
-import { TicketsDetailPageComponent } from './pages/tickets-detail-page/tickets-detail-page.component';
-import { EmpresaPageComponent } from './pages/empresa-page/empresa-page.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {TicketsPageComponent} from './pages/tickets-page/tickets-page.component';
+import {TicketsDetailPageComponent} from './pages/tickets-detail-page/tickets-detail-page.component';
+import {EmpresaPageComponent} from './pages/empresa-page/empresa-page.component';
+import {AgentePageComponent} from "./pages/agente-page/agente-page.component";
+import {ProductoPageComponent} from "./pages/producto-page/producto-page.component";
+import {SoportePageComponent} from "./pages/soporte-page/soporte-page.component";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {
     path: 'tickets',
     children: [
-      { path: '', component: TicketsPageComponent },
-      { path: ':ticket_id', component: TicketsDetailPageComponent }
+      {path: '', component: TicketsPageComponent},
+      {path: ':ticket_id', component: TicketsDetailPageComponent}
     ]
   },
-  { path: 'empresas', component: EmpresaPageComponent }
+  {path: 'empresas', component: EmpresaPageComponent},
+  {path: 'agente', component: AgentePageComponent},
+  {path: 'producto', component: ProductoPageComponent},
+  {path: 'soporte', component: SoportePageComponent}
   /* {
     path: 'internal',
     canActivate: [],
@@ -32,4 +38,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
